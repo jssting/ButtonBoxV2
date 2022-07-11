@@ -15,7 +15,7 @@ I just used the following switches :
 2. 4 square (https://www.jaycar.com.au/pushbutton-push-on-momentary-spst-red-actuator/p/SP0716) 
 3. 3 push button rotary switches https://www.jaycar.com.au/rotary-encoder-with-pushbutton/p/SR1230
 4. 1 toggle switch (for the ignition - https://www.jaycar.com.au/spst-standard-toggle-switch/p/ST0570) 
-5. 1. Large Momentary switch (Start Button - https://www.jaycar.com.au/engine-start-switch/p/SP0773)
+5. 1 Large Momentary switch (Start Button - https://www.jaycar.com.au/engine-start-switch/p/SP0773)
 
 Optional
 1. Flip Cover for ignition - https://www.jaycar.com.au/missile-launch-style-toggle-switch-cover-carbon-fibre-appearance/p/ST0584
