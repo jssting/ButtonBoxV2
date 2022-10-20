@@ -2,7 +2,6 @@
 #include <Keypad.h>
 #include <Joystick.h>
 
-//Pins for Rotary Encoder Switch
 #define rot1IntPin1 0
 #define rot1IntPin2 1
 #define rot2IntPin1 2
@@ -10,32 +9,28 @@
 #define rot3IntPin1 8
 #define rot3IntPin2 7
 
-//Pins for Rotary Encoder Push Button
 #define rot1Button 6
 #define rot2Button 5
 #define rot3Button 4
 
 #define ENABLE_PULLUPS
 
-#define NUMCOLS 5 //amount of buttons in the matrix row
-#define NUMROWS 3 // amount of button rows
-
-//Button values on the Joystick for the Encoder Push buttons
-#define Rot1BtnNum 14 
+#define NUMCOLS 5
+#define NUMROWS 3
+#define Rot1BtnNum 14
 #define Rot2BtnNum 15
 #define Rot3BtnNum 16
 
 const bool initAutoSendState = true;
 
-//Determines the button order per row
 byte buttons[NUMROWS][NUMCOLS] = {
 {4,3,2,1,0},
 {9,8,7,6,5},
 {10,11,12,13,14}
 };
 
-byte rowPins[NUMROWS] = {20,19,18}; //Per Row Arduino Pins (Pins A0-A2)
-byte colPins[NUMCOLS] = {9,10,11,12,13}; //Per Column Arduino Pins (Digital Pins 9-13)
+byte rowPins[NUMROWS] = {20,19,18};
+byte colPins[NUMCOLS] = {9,10,11,12,13};
 
 Joystick_ butJoystick(JOYSTICK_DEFAULT_REPORT_ID,JOYSTICK_TYPE_GAMEPAD, 24, 0,
 false, false, false, false, false, false,
@@ -79,7 +74,6 @@ void loop() {
 
 void CheckAllButtons(void) 
 {  
-  //Detecting button presses on the button matrix
   if (buttbx.getKeys())
   {
     for (int i=0; i<LIST_MAX; i++)
@@ -103,7 +97,6 @@ void CheckAllButtons(void)
   }
   
 
-  // Detecting the Rotary Encoder Push Button events
   if (digitalRead(rot1Button)==LOW)  butJoystick.setButton(Rot1BtnNum,1);
   else butJoystick.setButton(Rot1BtnNum,0);
   
@@ -118,7 +111,6 @@ void CheckAllButtons(void)
 }
 
 
-//Detect Encoder changes we have a short delay for Interupt based pins, and a slightly longer delay for direct reading (button 22) to allow it to register properly
 void CheckEncoders(void)
 {  
   int dir1= (int)encoder1.getDirection();
